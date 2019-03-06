@@ -12,6 +12,7 @@ Changer des droits sur des fichiers
 Commit vide
 
     git commit --allow-empty
+    git commit --allow-empty -m "Mon commit vide"
 
 Clone Avec des sous-modules
 
@@ -35,6 +36,9 @@ Suppression
     git tag -d mon_tag
     git push origin :refs/tags/mon_tag #supprime en remote
 
+Supprimer les fichiers inconnus de git
+
+    git clean -n -d <path>
 
 Reflog
 
