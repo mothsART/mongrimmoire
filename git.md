@@ -184,3 +184,6 @@ Suppression répertoire de travail
 
     git reset HEAD === git reset HEAD^0
 
+Gitk : voir les fichiers stash
+
+    gitk stash@{0}
