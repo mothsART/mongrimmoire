@@ -88,14 +88,12 @@ git update-index --assume-unchanged <file>
 (en savoir + : https://www.kernel.org/pub/software/scm/git/docs/git-update-index.html)
 (opération inverse : git update-index --no-assume-unchanged <file>)
 
-    #!bash
     git update-index --no-assume-unchanged 
 
 Cherry
 
 Considérons 2 branches => **master** et **topic**
 
-    #!bash
     git cherry -v topic | grep -e "^+" | grep -v "\[nc\]" | tee /dev/tty | wc -l
 
 donne la liste des commits présent dans la **topic** et non dans la **master**
@@ -118,13 +116,18 @@ git diff --name-status
 
 Amend
 
-    #!bash
     git commit --amend --no-edit
 
 Rajoute au dernier commit tous les fichiers du staging + tous les fichiers non traqués et renome l'intitulé du commit
 
-    #!bash
     git commit -a -u --amend -m "new message"
+
+Revert
+
+    git revert 99e18210791 -m 1
+
+    revenir en arrière pour 1 fichier précis :
+    git checkout 99e18210791 adresse/de/mon/fichier.rs
 
 Stash
 
@@ -132,7 +135,6 @@ Stash
 
 réapplique le stash avec l'index originel :
 
-    #!bash
     git stash apply --index
 
 Explication : http://www.git-attitude.fr/2014/09/15/30-options-git-qui-gagnent-a-etre-connues/#stasher-plus efficacement avec save et -u
@@ -155,7 +157,6 @@ En local
 En remote
 
     git push origin HEAD --force
-
 
 Sous modules
 
