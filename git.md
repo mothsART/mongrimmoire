@@ -46,6 +46,9 @@ Reflog permet de lister toutes les actions faites sur un dépôt.
 A la différence de **git log**, il va lister également les actions de suppression qui ne sont plus présente sur notre historique GIT.
 Cette commande est très utile pour récupérer des commits/tags/branches qui ont été supprimé ou pour revenir sur un historique précédent !
 
+revert un commit de merge :
+
+    git revert -m 1 #hash
 
 Cherry-pick + cherry
 
@@ -88,12 +91,14 @@ git update-index --assume-unchanged <file>
 (en savoir + : https://www.kernel.org/pub/software/scm/git/docs/git-update-index.html)
 (opération inverse : git update-index --no-assume-unchanged <file>)
 
+    #!bash
     git update-index --no-assume-unchanged 
 
 Cherry
 
 Considérons 2 branches => **master** et **topic**
 
+    #!bash
     git cherry -v topic | grep -e "^+" | grep -v "\[nc\]" | tee /dev/tty | wc -l
 
 donne la liste des commits présent dans la **topic** et non dans la **master**
@@ -126,7 +131,8 @@ Revert
 
     git revert 99e18210791 -m 1
 
-    revenir en arrière pour 1 fichier précis :
+revenir en arrière pour 1 fichier précis :
+
     git checkout 99e18210791 adresse/de/mon/fichier.rs
 
 Stash
