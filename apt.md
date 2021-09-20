@@ -10,6 +10,7 @@ Mises à jour :
 
     sudo apt update (rechercher les mises à jour)
     sudo apt ugrade (installer les mises à jour)
+    apt list --upgradable (Affichez les paquets pour lesquels une mise à jour est disponible)
     sudo apt full-upgrade (supprimer/installer et mettre à jour les paquets)
     sudo apt dist-upgrade (effectue la fonction upgrade en améliorant la gestion des dépendances pour les nouvelles versions de paquets)
 
