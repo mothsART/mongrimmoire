@@ -31,6 +31,10 @@ Gestion des sources :
 
     sudo apt edit-sources (permet de modifier les sources .list)
 
+Figer une version précise :
+
+    sudo apt-mark hold Firefox
+
 Aide :
 
     man apt (afficher le manuel d'apt)
